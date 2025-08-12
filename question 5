@@ -1,0 +1,58 @@
+//part a: diagonal matrix store
+def diag_store(mat, n):
+    arr = [0]*n
+    for i in range(n):
+        arr[i] = mat[i][i]
+    return arr
+
+mat = [[1,0,0],[0,2,0],[0,0,3]]
+print("diag:", diag_store(mat, 3))
+
+//part 2: tri diagonal matrix
+def tri_diag_store(mat, n):
+    arr = []
+    for i in range(n):
+        for j in range(n):
+            if abs(i-j) <= 1:
+                arr.append(mat[i][j])
+    return arr
+
+mat = [[2,1,0],[3,4,5],[0,6,7]]
+print("tri-diag:", tri_diag_store(mat, 3))
+
+
+//part 3: lower triangular matrix
+def lower_tri_store(mat, n):
+    arr = []
+    for i in range(n):
+        for j in range(i+1):
+            arr.append(mat[i][j])
+    return arr
+
+mat = [[1,0,0],[2,3,0],[4,5,6]]
+print("lower:", lower_tri_store(mat, 3))
+
+
+//part 4: upper triangular mtrix
+def upper_tri_store(mat, n):
+    arr = []
+    for i in range(n):
+        for j in range(i, n):
+            arr.append(mat[i][j])
+    return arr
+
+mat = [[1,2,3],[0,4,5],[0,0,6]]
+print("upper:",upper_tri_store(mat, 3))
+
+//part 5: symmetric matrix
+def sym_store(mat, n):
+    arr = []
+    for i in range(n):
+        for j in range(i+1):
+            arr.append(mat[i][j])
+    return arr
+
+mat = [[1,2,3],[2,4,5],[3,5,6]]
+print("sym:", sym_store(mat, 3))
+
+
