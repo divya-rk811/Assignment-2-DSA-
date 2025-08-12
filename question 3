@@ -1,0 +1,22 @@
+//part a
+def find_missing_lin(arr, n):
+    total = n * (n + 1) // 2  # sum from 1..n
+    sum_arr = sum(arr)
+    return total - sum_arr
+nums = [1, 2, 3, 5, 6]  # missing 4
+print("Missing (linear):", find_missing_lin(nums, 6))
+
+
+//part b
+def find_missing_bin(arr, n):
+    low = 0
+    high = n - 2  # since array has n-1 elements
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] != mid + 1:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return low + 1
+nums = [1, 2, 3, 5, 6]
+print("Missing (binary):", find_missing_bin(nums, 6))
