@@ -1,0 +1,10 @@
+def bubble_sort(listA):
+    n = len(listA)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if listA[j] > listA[j+1]:
+                listA[j], listA[j+1] = listA[j+1], listA[j]
+
+nums = [64, 34, 25, 12, 22, 11, 90]
+bubble_sort(nums)
+print("sorted list:", nums)
